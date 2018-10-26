@@ -11,5 +11,7 @@ Update information：
 2018.10.18 Update Gannt by zdy。
 
 2018.10.21 add SDP and Project Charter .Rose.pptx
-           update far and Plan and Gantt
-           use Configuration Management！
+​           update far and Plan and Gantt
+​           use Configuration Management！
+
+2018.10.26 add logo update Gantt ,far, Plan and SDP. 
