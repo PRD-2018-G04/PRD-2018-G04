@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html style="height: 100%">
+   <head>
+       <meta charset="utf-8">
+   </head>
+   <body style="height: 100%; margin: 0">
+       <div id="container" style="height: 100%"></div>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/echarts.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-gl/echarts-gl.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-stat/ecStat.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/dataTool.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/china.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/world.js"></script>
+       <script type="text/javascript" src="https://api.map.baidu.com/api?v=2.0&ak=ZUONbpqGBsYGXNIYHicvbAbM"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/bmap.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/simplex.js"></script>
+       <script type="text/javascript">
+var dom = document.getElementById("container");
+var myChart = echarts.init(dom);
+var app = {};
+option = null;
+option = {
+    title: {
+        text: '基础雷达图'
+    },
+    tooltip: {},
+    legend: {
+        data: ['冯一鸣', '刘乐威','周德阳','王飞钢','郦哲聪','平均']
+    },
+    radar: {
+        // shape: 'circle',
+        name: {
+            textStyle: {
+                color: '#fff',
+                backgroundColor: '#999',
+                borderRadius: 4,
+                padding: [3, 5]
+           }
+        },
+        indicator: [
+           { name: '工作任务40%', max: 40},
+           { name: '工作质量20%', max: 20},
+           { name: '工作技能(10%)', max: 10},
+           { name: '工作态度与责任感10%', max: 10},
+           { name: '协调性10%', max: 10},
+           { name: '纪律性10%', max: 10}
+        ]
+    },
+    series: [{
+        name: '预算 vs 开销（Budget vs spending）',
+        type: 'radar',
+        // areaStyle: {normal: {}},
+        data : [
+            {
+                value: [37, 18, 8, 8, 8, 9],
+                    name: '冯一鸣',
+                    label: {
+                        normal: {
+                            show: true,
+                            formatter:function(params) {
+                                return params.value;
+                            }
+                        }
+                    }
+
+            },
+              {
+                value: [36, 17, 8, 8, 8, 9],
+                    name: '刘乐威',
+                    label: {
+                        normal: {
+                            show: true,
+                            formatter:function(params) {
+                                return params.value;
+                            }
+                        }
+                    }
+
+            },
+            {
+                value: [36, 16, 9, 9, 8, 9],
+                    name: '周德阳',
+                    label: {
+                        normal: {
+                            show: true,
+                            formatter:function(params) {
+                                return params.value;
+                            }
+                        }
+                    }
+
+            },
+             {
+                value: [36, 17, 8, 8, 8,8],
+                    name: '王飞钢',
+                    label: {
+                        normal: {
+                            show: true,
+                            formatter:function(params) {
+                                return params.value;
+                            }
+                        }
+                    }
+
+            },
+             {
+                value: [37, 18, 8, 10, 8,8],
+                    name: '郦哲聪',
+                    label: {
+                        normal: {
+                            show: true,
+                            formatter:function(params) {
+                                return params.value;
+                            }
+                        }
+                    }
+
+            },
+            {
+                value: [36.4, 17.2, 8.2,8.6 ,8.2,8.6],
+                    name: '平均',
+                
+
+            },
+        ]
+    }]
+};
+;
+if (option && typeof option === "object") {
+    myChart.setOption(option, true);
+}
+       </script>
+   </body>
+</html>
